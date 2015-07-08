@@ -1,0 +1,15 @@
+<section id="itemsPage" class="container-fluid" ng-controller="MainController">
+    <div class="itemWrapper" ng-repeat="item in items">
+      <div class="itemsIconWrapper">
+        <div class="itemsFavorite" ng-model="addLike" ng-controller="LikesController" ng-click="addLike(item)"><i class="fa fa-heart"></i></div>
+        <div class="addItemToCart" ng-model="itemsAddToCart"><i class="fa fa-cart-plus"></i></div>
+      </div>
+      <div class="itemsImage">
+        <img src="{{item.Images[0].url_570xN}}" alt="" />
+      </div>
+      <div class="itemsDetailWrapper">
+        <h3 class="itemsPrice">{{item.price | currency}}</h3>
+        <h5 class="itemsTitle"> <a href="{{items.url}}">{{item.title}}</a></h5>
+      </div>
+  </div>
+</section>

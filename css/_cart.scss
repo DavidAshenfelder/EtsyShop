@@ -1,0 +1,64 @@
+#shoppingCartPage {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  top: 90px;
+  .cartHeaderWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid $border;
+  }
+}
+
+
+
+#shoppingCartItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid $border;
+  padding: 1%;
+  width: 85%;
+  .cartInfoWrapper {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    .cartItemTitle {
+      width: 50%;
+      display: block;
+      float: left;
+    }
+    .cartItemPrice {
+      width: 35%;
+      display: flex;
+      justify-content: flex-end;
+
+    }
+  }
+
+.cartDeleteWrapper {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  .cartDeleteItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3vmax;
+    height: 3vmax;
+    border: 3px solid $red;
+    border-radius: 100%;
+    color: $red;
+    i {
+      font-size: 2vmax;
+    }
+  }
+}
+
+  .cartItemImgWrapper {
+    width: 30%;
+
+  }
+}

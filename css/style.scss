@@ -1,0 +1,44 @@
+$darkPrimaryColor: #616161;
+$primaryColor: #9E9E9E;
+$lightPrimaryColor: #F5F5F5;
+$text: #212121;
+$accentColor: #607D8B;
+$secondaryText: #727272;
+$border: #B6B6B6;
+$red: #c92828;
+
+
+@import "_items.scss";
+@import "_itemDetail.scss";
+@import "_cart.scss";
+
+body {
+  background-color: $primaryColor;
+  color: $text;
+}
+
+ng-view {
+  width: 100%;
+  height: 100%;
+  background-color: $primaryColor;
+  color: $text;
+
+}
+
+#headerBar {
+  padding: 1%;
+  width: 100%;
+  z-index: 100;
+  background-color: $darkPrimaryColor;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#headerHomeButton {
+  background-color: $accentColor;
+}
+
+#cartButton {
+
+}
