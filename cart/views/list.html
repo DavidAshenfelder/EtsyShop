@@ -1,0 +1,20 @@
+<section id="shoppingCartPage" class="container-fluid" ng-controller="CartController">
+  <div class="cartHeaderWrapper">
+    <h1>Shopping Cart</h1>
+  </div>
+  <div id="shoppingCartItem" class="row" ng-repeat="cartItem in cartItems">
+    <div class="cartItemImgWrapper">
+      <img src="{{cartItem.Images[0].url_75x75}}" alt="">
+    </div>
+    <div class="cartInfoWrapper">
+      <h6 class="cartItemTitle">{{cartItem.title}}</h6>
+      <h4 class="cartItemPrice" ng-model="total">{{cartItem.price}}</h4>
+      <div class="cartDeleteWrapper">
+        <div class="cartDeleteItem" ng-click="deleteItem(cartItem._id)"><i class="fa fa-times"></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    total:{{cartPriceTotal()}}
+  </div>
+</section>

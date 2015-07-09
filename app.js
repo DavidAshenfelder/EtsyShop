@@ -5,28 +5,19 @@
   .module('EtsyShop', [
     'ngRoute',
     'underscore',
-    'moment'
+    'moment',
+    'cart',
+    'likes',
+    'store',
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/items', {
-        templateUrl: 'views/items.html',
-        controller: 'MainController'
-      })
-      .when('/item/:id', {
-        templateUrl: 'views/itemDetail.html',
-        controller: 'LikesController'
-      })
-      .when('/favorites', {
-        templateUrl: 'views/favorites.html',
-        controller: 'LikesController'
-      })
-      .when('/cart', {
-        templateUrl: 'views/cart.html',
+      .when('/', {
+        templateUrl: 'main/views/homeSearch.html',
         controller: 'MainController'
       })
       .when('/404', {
-        template: '<h2>Sorry, page not found</h2>'
+        templateUrl: 'main/views/error.html'
       })
       .otherwise({
         redirectTo: '/404'

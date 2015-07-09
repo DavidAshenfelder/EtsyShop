@@ -20,28 +20,40 @@
   overflow: hidden;
   border: 2px solid #B6B6B6;
   font-size: 1.5vmax; }
-  .itemWrapper:hover {
-    cursor: pointer; }
   .itemWrapper .itemsIconWrapper {
     width: 100%;
     height: auto;
     display: flex; }
-    .itemWrapper .itemsIconWrapper .itemsFavorite {
-      width: 15%;
+    .itemWrapper .itemsIconWrapper .expandItem {
+      width: 33%;
       height: auto;
       display: block;
-      font-size: 2vmax; }
+      font-size: 1.5vmax;
+      text-align: center; }
+      .itemWrapper .itemsIconWrapper .expandItem:hover {
+        color: #607D8B;
+        transition: ease .25s;
+        cursor: pointer; }
+    .itemWrapper .itemsIconWrapper .itemsFavorite {
+      width: 33%;
+      height: auto;
+      display: block;
+      font-size: 1.5vmax;
+      text-align: center; }
       .itemWrapper .itemsIconWrapper .itemsFavorite:hover {
         color: red;
-        transition: ease 0.25s; }
+        transition: ease .25s;
+        cursor: pointer; }
     .itemWrapper .itemsIconWrapper .addItemToCart {
-      width: 15%;
+      width: 33%;
       height: auto;
       display: block;
-      font-size: 2vmax; }
+      font-size: 1.5vmax;
+      text-align: center; }
       .itemWrapper .itemsIconWrapper .addItemToCart:hover {
         color: #607D8B;
-        transition: ease 0.25s; }
+        transition: ease .25s;
+        cursor: pointer; }
 
 .itemsDetailWrapper {
   height: 30%;
@@ -62,9 +74,51 @@
   width: auto;
   height: auto;
   border: 2px solid #B6B6B6; }
+  .itemsImage:hover {
+    cursor: pointer; }
   .itemsImage img {
     width: 250px;
     height: 250px; }
+
+.contrainer-fluid {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center; }
+
+.likesWrapper {
+  position: relative;
+  top: 100px;
+  width: 100%;
+  padding: 2%;
+  border: 2px solid #607D8B;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .likesWrapper .imageAside {
+    width: 48%;
+    height: 100%; }
+    .likesWrapper .imageAside img {
+      width: 90%; }
+  .likesWrapper .upPhotoInfoWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .likesWrapper .upPhotoInfoWrapper h4 {
+      width: 30%;
+      height: auto;
+      font-size: 2vmax; }
+  .likesWrapper .infoAside {
+    width: 48%;
+    padding: 2%;
+    height: 100%; }
+  .likesWrapper .infoDescription {
+    width: 100%;
+    margin-top: 5%; }
+  .likesWrapper .infoMaterials {
+    width: 100%; }
 
 #shoppingCartPage {
   display: flex;
@@ -115,6 +169,53 @@
   #shoppingCartItem .cartItemImgWrapper {
     width: 30%; }
 
+.contrainer-fluid {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center; }
+
+.favoritesHeader {
+  position: relative;
+  top: 100px;
+  text-align: center; }
+
+.storedetailsWrapper {
+  position: relative;
+  top: 100px;
+  width: 100%;
+  padding: 2%;
+  border: 2px solid #607D8B;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .storedetailsWrapper .imageAside {
+    width: 48%;
+    height: 100%; }
+    .storedetailsWrapper .imageAside img {
+      width: 90%; }
+  .storedetailsWrapper #favoritesHeart {
+    color: #c92828; }
+  .storedetailsWrapper .upPhotoInfoWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .storedetailsWrapper .upPhotoInfoWrapper h4 {
+      width: 30%;
+      height: auto;
+      font-size: 2vmax; }
+  .storedetailsWrapper .infoAside {
+    width: 48%;
+    padding: 2%;
+    height: 100%; }
+  .storedetailsWrapper .infoDescription {
+    width: 100%;
+    margin-top: 5%; }
+  .storedetailsWrapper .infoMaterials {
+    width: 100%; }
+
 body {
   background-color: #9E9E9E;
   color: #212121; }
@@ -136,5 +237,14 @@ ng-view {
 
 #headerHomeButton {
   background-color: #607D8B; }
+
+.homePageH1 {
+  position: relative;
+  top: 150px; }
+
+.fa-shopping-cart {
+  padding: 1%;
+  font-size: 2vmax;
+  color: #607D8B; }
 
 /*# sourceMappingURL=style.css.map */

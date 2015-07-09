@@ -1,2 +1,4 @@
+bower_components
 .sass-cache
 READ.md
+.DS_Store

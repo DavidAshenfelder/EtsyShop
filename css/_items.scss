@@ -21,32 +21,45 @@
   overflow: hidden;
   border: 2px solid $border;
   font-size: 1.5vmax;
-  &:hover {
-    cursor: pointer;
-  }
+
   .itemsIconWrapper {
     width: 100%;
     height: auto;
     display: flex;
-    .itemsFavorite {
-      width: 15%;
+    .expandItem {
+      width: 33%;
       height: auto;
       display: block;
-      font-size: 2vmax;
+      font-size: 1.5vmax;
+      text-align: center;
+      &:hover {
+        color: $accentColor;
+        transition: ease .25s;
+        cursor: pointer;
+      }
+    }
+    .itemsFavorite {
+      width: 33%;
+      height: auto;
+      display: block;
+      font-size: 1.5vmax;
+      text-align: center;
       &:hover {
         color: red;
-        transition: ease .25s
+        transition: ease .25s;
+        cursor: pointer;
       }
     }
     .addItemToCart {
-      width: 15%;
+      width: 33%;
       height: auto;
       display: block;
-      font-size: 2vmax;
+      font-size: 1.5vmax;
+      text-align: center;
       &:hover {
         color: $accentColor;
-        transition: ease .25s
-
+        transition: ease .25s;
+        cursor: pointer;
       }
     }
   }
@@ -75,6 +88,9 @@
   width: auto;
   height: auto;
   border: 2px solid $border;
+  &:hover {
+    cursor: pointer;
+  }
   img {
     width: 250px;
     height: 250px;

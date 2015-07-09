@@ -5,7 +5,13 @@
   justify-content: center;
 }
 
-.likesWrapper {
+.favoritesHeader {
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+
+.storedetailsWrapper {
   position: relative;
   top: 100px;
   width: 100%;
@@ -21,6 +27,9 @@
     img {
       width: 90%;
     }
+  }
+  #favoritesHeart {
+    color: $red;
   }
   .upPhotoInfoWrapper {
     width: 100%;

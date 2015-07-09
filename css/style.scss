@@ -11,6 +11,7 @@ $red: #c92828;
 @import "_items.scss";
 @import "_itemDetail.scss";
 @import "_cart.scss";
+@import "_favorites.scss";
 
 body {
   background-color: $primaryColor;
@@ -22,7 +23,6 @@ ng-view {
   height: 100%;
   background-color: $primaryColor;
   color: $text;
-
 }
 
 #headerBar {
@@ -41,4 +41,16 @@ ng-view {
 
 #cartButton {
 
+}
+
+
+.homePageH1 {
+  position: relative;
+  top: 150px;
+}
+
+.fa-shopping-cart {
+  padding: 1%;
+  font-size: 2vmax;
+  color: $accentColor;
 }
