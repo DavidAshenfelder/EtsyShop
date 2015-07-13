@@ -1,18 +1,4 @@
-<!-- <div ng-include="'main/views/header.html'" ng-controller="StoreController"></div>
---><section id="itemsPage" class="container-fluid" ng-controller="StoreController">
+<section id="itemsPage" class="container-fluid">
     <input type="text" class="form-control" placeholder="Search" ng-model="search">
-    <div class="itemWrapper" ng-repeat="item in items | filter:search" data-id="{{item.listing_id}}">
-      <div class="itemsIconWrapper">
-        <div class="itemsFavorite" ng-model="addLike" ng-controller="LikesController" ng-click="addLike(item)"><i class="fa fa-heart"></i></div>
-        <div class="addItemToCart" ng-model="itemsAddToCart" ng-controller="CartController" ng-click="buyItem(item)"><i class="fa fa-cart-plus"></i></div>
-        <div class="expandItem"  ng-controller="StoreController" ng-click=""><a href="#/store/{{item.listing_id}}"><i class="fa fa-expand"></i></a></div>
-      </div>
-      <div class="itemsImage">
-        <img src="{{item.Images[0].url_570xN}}" alt="" />
-      </div>
-      <div class="itemsDetailWrapper">
-        <h3 class="itemsPrice">{{item.price | currency}}</h3>
-        <h5 class="itemsTitle"> <a href="{{items.url}}">{{item.title}}</a></h5>
-      </div>
-  </div>
+    <listItem ng-repeat="item in "></listItem>
 </section>

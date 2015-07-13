@@ -1,0 +1,14 @@
+<div class="itemWrapper" ng-repeat="item in items | filter:search" data-id="{{item.listing_id}}">
+  <div class="itemsIconWrapper">
+    <div class="itemsFavorite" ng-model="addLike" ng-controller="LikesController" ng-click="addLike(item)"><i class="fa fa-heart"></i></div>
+    <div class="addItemToCart" ng-model="itemsAddToCart" ng-controller="CartController" ng-click="buyItem(item)"><i class="fa fa-cart-plus"></i></div>
+    <div class="expandItem" ng-click=""><a href="#/store/{{item.listing_id}}"><i class="fa fa-expand"></i></a></div>
+  </div>
+  <div class="itemsImage">
+    <img src="{{item.Images[0].url_570xN}}" alt="" />
+  </div>
+  <div class="itemsDetailWrapper">
+    <h3 class="itemsPrice">{{item.price | currency}}</h3>
+    <h5 class="itemsTitle"> <a href="{{item.url}}">{{item.title}}</a></h5>
+  </div>
+</div>

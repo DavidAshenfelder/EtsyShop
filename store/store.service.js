@@ -14,15 +14,9 @@
           //https://openapi.etsy.com/v2/listings/active.js?includes=Images:1:0&fields=listing_id,title,price,views,url,materials,tags,currency_code,description&callback=JSON_CALLBACK&api_key=0jkgdw94ddo75o3hfkoi7stk
           //GET https://openapi.etsy.com/v2/listings/active?api_key={YOUR_API_KEY}
           // url example
-          return this.baseUrl + "&format=" + this.format + '&keywords=wallet' + '&api_key=' + this.apiKey + this.callback;
+          return this.baseUrl + "&format=" + this.format + '&keywords=wood' + '&api_key=' + this.apiKey + this.callback;
         }
       };
-
-      // var mapDataToUrls = function (collection) {
-      //   return _.map(collection, function (obj) {
-      //     return {Images: items.data.results.Images};
-      //   });
-      // };
 
       var getItems = function () {
         var deferred = $q.defer();
@@ -31,11 +25,9 @@
           console.log('we are in cache');
           deferred.resolve(cache)
         } else {
-          return $http.jsonp(urlOpts.buildUrl()).then(function (items) {
+           $http.jsonp(urlOpts.buildUrl()).then(function (items) {
              var etsyArray = items.data.results;
-             console.log(etsyArray);
              console.log('in http method');
-             return etsyArray
              cacheEngine.put('items', etsyArray);
               deferred.resolve(etsyArray);
          })
@@ -44,10 +36,19 @@
       };
 
       var getItem = function (id) {
-        return $http.jsonp(urlOpts.buildUrl()).then(function (items) {
-          var narrowedDownArr = _.where(items.data, {id: id});
-            // return mapDataToUrls(narrowedDownArr)[0];
-        });
+        var deferred = $q.defer()
+        var cache = cacheEngine.get('item')
+        if (cache) {
+          console.log("we're in the cache!");
+          defered.resolve(cache)
+        } else {
+          $http.jsonp(urlOpts.buildUrl()).then(function (items) {
+            console.log("http method");
+           var narrowedDownArr = _.where(items.data.results, {listing_id:Number(id)});
+             deferred.resolve(narrowedDownArr[0]);
+         });
+        }
+        return deferred.promise;
       };
 
       return {

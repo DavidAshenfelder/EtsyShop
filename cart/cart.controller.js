@@ -2,14 +2,21 @@
   'use strict';
   angular
   .module('cart')
-  .controller('CartController', function ($scope, CartService, $routeParams, $rootScope) {
-    CartService.getCart().success(function (cartItems) {
-      $rootScope.cartItems = cartItems;
-    });
+  .controller('CartController', function ($scope, CartService, $routeParams, $rootScope, $location) {
+    $rootScope.cartItems = []
 
-    CartService.getCartItem($routeParams.cartItemId).then(function (cartItem) {
-      $scope.cartItem = cartItem;
-    });
+
+    $rootScope.goToCart = function() {
+       $location.path('/cart');
+       CartService.getCart().success(function (cartItems) {
+         $rootScope.cartItems = cartItems;
+       });
+
+
+       CartService.getCartItem($routeParams.cartItemId).then(function (cartItem) {
+         $scope.cartItem = cartItem;
+       });
+    }
 
     $rootScope.cartNumber = function() {
       return $rootScope.cartItems.length
@@ -27,12 +34,14 @@
 
     }
 
-    // var watchCallback = function () {
-    //   CartService.getCart().success(function (cartItems) {
-    //     $rootScope.cartItems = cartItems;
-    //   });
-    // }
-    // $scope.$on('cartItem:added', watchCallback);
-    // $scope.$on('cartItem:deleted', watchCallback);
+    var watchCallback = function () {
+      CartService.getCart().success(function (cartItems) {
+        $rootScope.cartItems = cartItems;
+      });
+    }
+    $scope.$on('cartItem:added', watchCallback);
+    $scope.$on('cartItem:deleted', watchCallback);
+    $scope.$on('cartItem:deleted', watchCallback);
+
   })
 }());

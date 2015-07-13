@@ -15,8 +15,16 @@
       return $http.get(url);
     };
 
+    var cartLength = function(){
+      return getCart.length
+    }
+
     var getCartItem = function (id) {
-      return $http.get(url + '/' + id)
+
+      return $http.get(url + '/' + id).then(function(response) {
+        $rootScope.$broadcast()
+      })
+
     }
 
     var deleteCartItem = function (id) {

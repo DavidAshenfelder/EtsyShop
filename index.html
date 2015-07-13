@@ -10,7 +10,7 @@
   <title>EtsyShop</title>
 </head>
 <body>
-<nav id="headerBar" class="navbar navbar-default">
+<nav id="headerBar" class="navbar navbar-default" ng-controller="MainController">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -29,13 +29,13 @@
           <ul class="dropdown-menu">
             <li><a href="#/">Home</a></li>
             <li><a href="#/store">Store</a></li>
-            <li><a href="#/favorites">Favorites</a></li>
-            <li><a href="#/cart">Cart</a></li>
+            <li><a href="#/favorites" ng-controller="LikesController" ng-click="loadLikes()">Favorites</a></li>
+            <li><a href="#/cart" ng-controller="CartController" ng-click="goToCart()">Cart</a></li>
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><button id="cartButton" ng-click="goToCart()" type="button"><i class="fa fa-shopping-cart" ng-bind="cartNumber()"></i></button></li>
+        <li><button id="cartButton" ng-click="goToCart()"  ng-controller="MainController" type="button"><i class="fa fa-shopping-cart" ng-bind="cartNumber()"></i></button></li>
         <li class="cartNumber" ></li>
       </ul>
     </div>
