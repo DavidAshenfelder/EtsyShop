@@ -1,4 +1,4 @@
 <section id="itemsPage" class="container-fluid">
     <input type="text" class="form-control" placeholder="Search" ng-model="search">
-    <listItem ng-repeat="item in "></listItem>
+    <etsy-item ng-repeat="item in items | filter:search" item="item"></etsy-item>
 </section>

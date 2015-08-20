@@ -2,10 +2,11 @@
   'use strict';
   angular
     .module('store')
-    .directive('EtsyShop', function() {
+    .directive('etsyItem', function() {
       return {
         restrict: 'E',
-        templateUrl: 'store/views/listItem.html'
+        replace: true,
+        templateUrl: 'store/views/listItem.html',
         scope: {
           item: '=',
         },

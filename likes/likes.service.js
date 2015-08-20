@@ -2,7 +2,7 @@
   'use strict';
   angular
   .module('likes')
-  .factory('LikesService', function ($http) {
+  .factory('LikesService', function ($http,$rootScope) {
     var url = 'http://tiy-fee-rest.herokuapp.com/collections/etsyshop2';
     var addLike = function (item) {
       $http.post(url, item).success(function (resp) {

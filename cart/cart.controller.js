@@ -39,8 +39,8 @@
         $rootScope.cartItems = cartItems;
       });
     }
+    
     $scope.$on('cartItem:added', watchCallback);
-    $scope.$on('cartItem:deleted', watchCallback);
     $scope.$on('cartItem:deleted', watchCallback);
 
   })
